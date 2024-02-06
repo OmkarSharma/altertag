@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.container h2{
+    text-transform:capitalize;
+    text-decoration: underline;
+}
+
+
+.container p{
+    padding-top: 25px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: black;
+}
+
+.container button{
+  margin-top: 25px;
+  padding: 15px 30px ;
+  background-color: aquamarine;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.container button:hover{
+background-color: black;
+color: azure;
+cursor: pointer;
+text-decoration: underline
+
+}
+
+@media(width <= 480px){
+    .container{
+        padding-top: 35%;
+    }
+    .container h2{
+        text-align: center;
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h2>Let's remove the junk from line!</h2>
+            <p id="new-later"></p>
+            <button  id="rm"  onclick="hello(),change()">Click To Remove</button>   
+        </div>
+ 
+</body>
+
+<!-- js  -->
+<script>
+
+    function hello(){
+    const para = prompt(" Enter The Text");
+    const newpara = para.replaceAll(/-|.webp|.png|.jpg|.jpg.webp/g," ");
+    const message = document.getElementById('new-later').innerHTML = newpara;
+    console.log(message);
+
+    // click to chnage button name 
+    var x = document.getElementById('rm');
+    if(x.innerHTML === "Junk removed"){
+        x.innerHTML = "Click To Remove"
+    }
+    else{
+        x.innerHTML = "Junk Removed";
+    }
+}
+
+// function change(){
+
+
+// }
+
+
+</script>
+</html>
